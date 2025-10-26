@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>加藤 義成｜Cloud Engineer Portfolio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #1e2538;
+      --text: #f8fafc;
+      --subtext: #94a3b8;
+      --accent: #38bdf8;
+      --border: rgba(255,255,255,0.07);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f8fafc;
+        --panel: #ffffff;
+        --text: #0f172a;
+        --subtext: #475569;
+        --accent: #0ea5e9;
+        --border: rgba(0,0,0,0.07);
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .wrapper {
+        grid-template-columns: 280px 1fr;
+      }
+    }
+
+    .card {
+      background-color: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem 1.5rem 2rem;
+    }
+
+    .name {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .role {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-top: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--subtext);
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .list-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .tag {
+      background-color: rgba(56,189,248,0.12);
+      color: var(--accent);
+      border: 1px solid rgba(56,189,248,0.4);
+      font-size: 0.75rem;
+      line-height: 1.2;
+      font-weight: 500;
+      padding: .4rem .6rem;
+      border-radius: .5rem;
+      white-space: nowrap;
+    }
+
+    .qual-list {
+      font-size: .9rem;
+      color: var(--text);
+      padding-left: 1rem;
+    }
+    .qual-list li {
+      margin-bottom: .4rem;
+    }
+
+    .contact-box {
+      margin-top: 1rem;
+      font-size: .9rem;
+      color: var(--subtext);
+      line-height: 1.4;
+    }
+    .contact-accent {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .main-area {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .block {
+      background-color: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem 1.5rem 2rem;
+    }
+
+    .block h2 {
+      margin: 0 0 .75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      row-gap: .5rem;
+    }
+
+    .block h2 span.period {
+      font-size: .8rem;
+      font-weight: 500;
+      color: var(--subtext);
+    }
+
+    .block p {
+      margin: 0 0 .75rem;
+      font-size: .9rem;
+    }
+
+    .bullets {
+      font-size: .9rem;
+      padding-left: 1rem;
+      margin: .5rem 0 1rem;
+    }
+    .bullets li {
+      margin-bottom: .4rem;
+    }
+
+    .repo-card {
+      border: 1px solid var(--border);
+      border-radius: .75rem;
+      padding: 1rem 1.25rem 1.25rem;
+      background-color: rgba(0,0,0,0.15);
+    }
+    @media (prefers-color-scheme: light) {
+      .repo-card {
+        background-color: rgba(0,0,0,0.03);
+      }
+    }
+
+    .repo-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: .5rem;
+    }
+    .repo-name {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .repo-desc {
+      font-size: .9rem;
+      line-height: 1.5;
+      margin-top: .5rem;
+      margin-bottom: .75rem;
+    }
+
+    .repo-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: .75rem;
+      color: var(--subtext);
+      margin-top: 2rem;
+    }
+
+    .accent-line {
+      font-size: .8rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-box {
+      background-color: rgba(56,189,248,0.07);
+      border: 1px solid rgba(56,189,248,0.4);
+      border-radius: .75rem;
+      padding: 1rem 1.25rem;
+      font-size: .85rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrapper">
+    <aside class="card">
+      <div class="name">加藤 義成<br><span style="font-size:.8rem; font-weight:500; color:var(--subtext);">Yoshinari Kato</span></div>
+      <div class="role">クラウドエンジニア（AWS運用・保守 / 顧客折衝・改善提案）</div>
+
+      <div class="section-title">スキル / Tech</div>
+      <div class="list-tags">
+        <span class="tag">AWS</span><span class="tag">VPC / SG</span><span class="tag">CloudWatch</span>
+        <span class="tag">Zabbix</span><span class="tag">Windowsパッチ運用</span>
+        <span class="tag">DBバックアップ</span><span class="tag">EBS管理</span>
+        <span class="tag">Jenkins / CI/CD</span><span class="tag">CloudFormation</span>
+        <span class="tag">SSL証明書登録</span>
+      </div>
+
+      <div class="section-title">保有資格</div>
+      <ul class="qual-list">
+        <li>AWS Certified Cloud Practitioner (CLF)</li>
+        <li>AWS Certified Solutions Architect - Associate (SAA)</li>
+        <li>AWS Certified SysOps Administrator - Associate (SOA)</li>
+        <li>AWS Certified Solutions Architect - Professional (SAP)</li>
+      </ul>
+
+      <div class="section-title">連絡</div>
+      <div class="contact-box">
+        エンジニアポジション・インフラ運用/構築/自動化に関心があります。<br>
+        ご連絡はGitHubのIssuesまたは面談時に共有するメールでお願いします。
+        <div class="contact-accent">▶ インフラ運用から設計・自動化にステップアップしたいです</div>
+      </div>
+    </aside>
+
+    <section class="main-area">
+
+      <section class="block">
+        <h2>概要<span class="period">Profile</span></h2>
+        <p class="accent-line">AWS運用保守／障害対応／手順の自動化に強いクラウドエンジニア</p>
+        <p>
+          株式会社オープンアップITエンジニアにて、AWS上で稼働する自社開発HRテクノロジーサービスの運用保守を担当しています。
+          DBコピー、DRバックアップ、Windowsパッチ適用、VPCエンドポイント構築、証明書登録、EBS管理、CloudWatch監視など、
+          インフラの日次運用を安定的に支えています。
+        </p>
+      </section>
+
+      <section class="block">
+        <h2>実務経験<span class="period">2025年3月〜現在</span></h2>
+        <ul class="bullets">
+          <li>AWS本番環境→テスト環境へのDBコピー・バックアップ</li>
+          <li>Windows Update/WSUSによるパッチ適用</li>
+          <li>Jenkins+CloudFormationでVPCエンドポイント構築</li>
+          <li>SSL証明書の登録・更新、CIDRポート設定</li>
+          <li>EBSボリューム拡張・タイプ変更</li>
+          <li>インスタンスタイプ変更・性能改善対応</li>
+          <li>IBM WASチューニング、Oracle init.ora設定、RDS表領域拡張</li>
+          <li>Zabbix / CloudWatchを用いた障害一次切り分けと復旧</li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h2>コミュニケーション経験<span class="period">プリセールス / 提案支援</span></h2>
+        <p>
+          サイバーエージェントおよびNTTコムエンジニアリングでの業務では、
+          AI電話サービスやAWSプロダクト提案に携わり、課題ヒアリング・要件定義・見積もり・構成図作成を担当しました。
+          非技術部門とエンジニアの間で橋渡し役を担い、顧客満足度と実現性の両立に努めました。
+        </p>
+      </section>
+
+      <section class="block">
+        <h2>ポートフォリオ / GitHub<span class="period">Hands-on</span></h2>
+        <div class="repo-card">
+          <div class="repo-top">
+            <a class="repo-name" href="https://github.com/Yoshi94321/slack_image_uploader" target="_blank">slack_image_uploader</a>
+            <span style="font-size:.75rem; color:var(--subtext); font-weight:500;">AWS / Python</span>
+          </div>
+          <p class="repo-desc">
+            画像を送信すると料理名を認識し、DynamoDBのレシピ情報を返すサーバーレスアプリ。
+            S3・Lambda・SQS・DynamoDBを連携し、AI×レシピ検索の自動化を実装中です。
+          </p>
+          <div class="repo-tech">
+            <span class="tag">S3</span><span class="tag">Lambda</span><span class="tag">DynamoDB</span>
+            <span class="tag">SQS</span><span class="tag">Python</span><span class="tag">Serverless</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>今後の目標<span class="period">Next Step</span></h2>
+        <p>
+          AWS運用・保守で培った経験を活かし、Infrastructure as Code（Terraform / CloudFormation）や自動化の領域を深めたいです。<br>
+          また、監視・パッチ・証明書などの定型オペレーションを標準化し、より安全で再現性の高い運用を目指します。
+        </p>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Yoshinari Kato
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
